@@ -1,0 +1,16 @@
+Marque : nomMarque, pays
+appartient, 11 Modele, ON Marque
+Modele : nomModele
+
+:
+modele_voiture, 11 Voiture, 0N Modele
+
+Couleur: nomCouleur
+Couleur_Voiture, 1N Voiture, ON Couleur
+Voiture: idVoiture
+type_voiture, 11 Voiture, ON Type
+Type   : nomType
+
+photo_voiture, 1N Voiture, 11 Photo
+
+Photo  : idPhoto, datePhoto, nomPhoto

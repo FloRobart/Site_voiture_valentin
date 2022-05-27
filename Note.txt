@@ -1,0 +1,13 @@
+nom des photos               --> modele-specificité-couleur (généralement)
+type de rangement par défaut --> marque
+type de rangement possible   --> marque
+                                 lieux de prise de la photo
+                                 date de prise de la photo
+                                 type (supercar, suv ...)
+                                 couleur
+
+
+une table voiture
+une table marque
+une table type
+une table couleur

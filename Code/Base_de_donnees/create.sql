@@ -1,0 +1,56 @@
+DROP DATABASE VOITURE;
+
+CREATE DATABASE VOITURE
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+
+
+-- TYPE_VOITURE
+CREATE TABLE TYPE_VOITURE (
+    nomtype   VARCHAR(42) PRIMARY KEY
+);
+
+
+-- MODELE
+CREATE TABLE MODELE (
+    nommodele  VARCHAR(42) PRIMARY KEY,
+    marque     VARCHAR(42) REFERENCES Marque(nommarque)
+);
+
+
+-- COULEUR
+CREATE TABLE COULEUR (
+    nomcouleur VARCHAR(42) PRIMARY KEY
+);
+
+
+-- VOITURE
+CREATE TABLE VOITURE (
+    idvoiture SERIAL PRIMARY KEY,
+    nommodele VARCHAR(42) REFERENCES MODELE       (nommodele),
+    nomtype   VARCHAR(42) REFERENCES TYPE_VOITURE (nomtype)
+);
+
+
+-- PHOTO
+CREATE TABLE PHOTO (
+    idphoto    SERIAL PRIMARY KEY,
+    nomphoto   VARCHAR(42),
+    datePhoto  DATE,
+    idvoiture  INT REFERENCES VOITURE (idvoiture)
+);
+
+
+-- COULEUR_VOITURE
+CREATE TABLE COULEUR_VOITURE (
+    idvoiture  INT         REFERENCES VOITURE (idvoiture ),
+    nomcouleur VARCHAR(42) REFERENCES COULEUR (nomcouleur),
+    PRIMARY KEY (idvoiture, nomcouleur)
+);
+
+
+-- MARQUE
+CREATE TABLE MARQUE (
+    nommarque VARCHAR(42) PRIMARY KEY,
+    pays      VARCHAR(42)
+);
