@@ -6,64 +6,39 @@ VALUES ('', ''),   -- 1
 
 -- TYPE
 INSERT INTO TYPE_VOITURE (nomType)
-VALUES ('suv'        ),
-       ('crossover'  ),
-       ('4x4'        ),
-       ('6x6'        ),
-       ('compact'    ),
-       ('berlin'     ),
-       ('break'      ),
-       ('sports car' ),
-       ('supercar'   ),
-       ('hypercar'   ),
-       ('limousine'  ),
-       ('competition'),
-       ('cabriolet'  ),
-       ('roadster'   );
+VALUES ('suv'        ), --  1
+       ('crossover'  ), --  2
+       ('4x4'        ), --  3
+       ('6x6'        ), --  4
+       ('compact'    ), --  5
+       ('berlin'     ), --  6
+       ('break'      ), --  7
+       ('sports car' ), --  8
+       ('supercar'   ), --  9
+       ('hypercar'   ), -- 10
+       ('limousine'  ), -- 11
+       ('competition'), -- 12
+       ('cabriolet'  ), -- 13
+       ('roadster'   ); -- 14
 
 
 
 -- MARQUE
 INSERT INTO MARQUE (nomMarque, pays)
-VALUES ('bugatti'    , ''),
-       ('koenigsegg' , ''),
-       ('pagani'     , 'Italie'),
-       ('caterham'   , ''),
-       ('detomaso'   , ''),
-       ('mazda'      , ''),
-       ('mitsubishi' , ''),
-       ('ruf'        , ''),
-       ('ariel'      , ''),
-       ('ultima'     , ''),
-       ('rimac'      , ''),
-       ('radical'    , ''),
-       ('donkervoort', ''),
-       ('volvo'      , ''),
-       ('lexus'      , ''),
-       ('venturi'    , ''),
-       ('datsun'     , ''),
-       ('alpine'     , ''),
-       ('hyundai'    , ''),
-       ('chrysler'   , ''),
-       ('jeep'       , ''),
-       ('infiniti'   , ''),
-       ('lincoln'    , ''),
-       ('holden'     , ''),
-       ('mg'         , ''),
-       ('saleen'     , ''),
-       ('acura'      , ''),
-       ('Renault'    , 'France'   ),
-       ('Peugeot'    , 'France'   ),
-       ('Bmw'        , 'Allemagne'),
-       ('Mercedes'   , 'Allemagne'),
-       ('Audi'       , 'Allemagne'),
-       ('Opel'       , 'Allemagne'),
-       ('Smart'      , 'Allemagne'),
-       ('Ferrari'    , 'Italie'   ),
-       ('Lamborghini', 'Italie'   ),
-       ('Alfa Romeo' , 'Italie'   ),
-       ('Italdesign' , 'Italie'   ),
-       ('Lancia'     , 'Italie'   ),
+VALUES ('bugatti'    , 'Italie'   ), --  1
+       ('pagani'     , 'Italie'   ), --  2
+       ('Renault'    , 'France'   ), --  3
+       ('Peugeot'    , 'France'   ), --  4
+       ('Bmw'        , 'Allemagne'), --  5
+       ('Mercedes'   , 'Allemagne'), --  6
+       ('Audi'       , 'Allemagne'), --  7
+       ('Opel'       , 'Allemagne'), --  8
+       ('Smart'      , 'Allemagne'), --  9
+       ('Ferrari'    , 'Italie'   ), -- 10
+       ('Lamborghini', 'Italie'   ), -- 11
+       ('Alfa Romeo' , 'Italie'   ), -- 12
+       ('Italdesign' , 'Italie'   ), -- 13
+       ('Lancia'     , 'Italie'   ), -- 14
 
 
 -- MODELE
