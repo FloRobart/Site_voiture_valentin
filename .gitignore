@@ -4,3 +4,8 @@
 *.jpeg
 *.gif
 *.raw
+*.DNG
+*.NEF
+
+# Fichier google drive
+desktop.ini
