@@ -6,6 +6,7 @@
 *.raw
 *.DNG
 *.NEF
+*.svg
 
 # Fichier google drive
 desktop.ini
