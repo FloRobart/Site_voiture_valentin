@@ -1,13 +1,30 @@
 nom des photos               --> modele-specificité-couleur (généralement)
-type de rangement par défaut --> marque
-type de rangement possible   --> marque
-                                 lieux de prise de la photo
-                                 date de prise de la photo
-                                 type (supercar, suv ...)
-                                 couleur
+//type de rangement par défaut --> marque
+
+type de rangement possible  --> 
+    marque [déduit du modele]
+    lieux de prise de la photo [à remplir par valenting]
+    date de prise de la photo [meta]
+    type (supercar, suv, hypercar, luxe, berline, break, limousine, cabriolet, gt, ancienne, classique, piste/course) [à remplir par valenting]
+    couleur [à remplir par valenting]
+    modele [à remplir par valenting]
 
 
-une table voiture
-une table marque
-une table type
-une table couleur
+
+caracteristique à mettre dans la bado (en plus des types de rangement) -->
+    cylindré [site web]
+    couple [site web]
+    acceleration réel (0-100) [site web]
+    vitesse max [site web]
+    poids [site web]
+    transmission [site web]
+    boite de vitesse [site web]
+    énergie (injection directe = essence) [site web]
+    architecture moteur (en ligne, en V, en W, en rotation, a plat) [site web]
+    aspiration (atmospherique, turbo, bi-turbo, tri-turbo, quadri-turbo, compresseur, superchargeur, twin-turbo) [site web]
+    puissance maximal [site web]
+    régime maximal [site web]
+
+
+
+faire une table moteur pour toute les caracteristique moteur

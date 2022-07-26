@@ -1,0 +1,12 @@
+# Photo
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.raw
+*.DNG
+*.NEF
+*.svg
+
+# Fichier google drive
+desktop.ini
