@@ -2,8 +2,13 @@
 /* Variables */
 /*-----------*/
 :root{
-    --CoulFond : white;
-    --Police : Dubai Light;
+    --CoulFond : black;
+
+    /* Police d'écriture */
+    --StylePolice : Dubai Light;
+    --CoulPolice  : red;
+
+    --TailleTitre : 32px;
 }
 
 
@@ -13,11 +18,13 @@
 /*---------------------*/
 *{
     margin : 0px;
+    padding : 0px;
 }
 
 html {
     background-color: var(--CoulFond);
-    font-family: var(--Police);
+    font-family: var(--StylePolice);
+    color : var(--CoulPolice)
 }
 
 
@@ -28,95 +35,39 @@ html {
 /* Titre principale */
 h1 {
     text-align : center;
-    border     : 2px solid rgb(255, 0, 0);
-    width      : 100%;
-}
-
-.accueil {
-    position : absolute;
 }
 
 
-
-/*---------------*/
-/* CORPS de page */
-/*---------------*/
-/* Block autour de la barre de recherche */
-#searchbar {
-    border-style  : solid;
-    display       : block; 
-    border-radius : 5px;
-    width         : 60%;
-    margin-left   : auto;
-    margin-right  : auto;
-    margin-top    : 3%;
+/* Ensemble de la partie recherche */
+.recherche {
+    float : right;
+    margin-top : -44px;
 }
 
 
 /* Barre de recherche */
 input {
     resize        : none;
-    width         : 78%;
-    height        : 50%;
-    margin-top    : 2%;
-    margin-bottom : 1.5%;
-    margin-left   : 2%;
-    font-size     : 20px;
     overflow      : hidden;
-    border-radius : 5px;
-
 }
 
 
-/* Barre de trie */
-select {
-    width         : 15.5%;
-    margin-top    : 2%;
-    margin-right  : 2%;
-    font-size     : 20px;
-    border-radius : 5px;
-    float         : right;
-}
+/* Liste de trie */
 
 
 
-/*---------*/
-/* Tableau */
-/*---------*/
-/* Titre du tableau */
-caption {
-    border : solid black;
-}
-
-
-/* Ensemble du tableau */
-table {
-    border          : 2px solid;
-    border-collapse : collapse;
-    margin-top      : 5%;
-    margin-left     : auto;
-    margin-right    : auto;
-    width           : 99%
-}
-
-a > img {
-    width : 100%;
-}
-
-
-/* Ensemble des cellules */
-td {
-    border           : solid black;
-    text-align       : center;
-    background-color : rgb(255, 255, 255);
-}
+/* Bouton valider */
 
 
 
-/*-------------*/
-/* BAS de page */
-/*-------------*/
-footer
-{
-    background-color : aqua;
-}
+
+/*---------------*/
+/* CORPS de page */
+/*---------------*/
+
+
+
+
+/*------*/
+/* Test */
+/*------*/
