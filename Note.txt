@@ -1,7 +1,8 @@
-nom des photos               --> modele-specificité-couleur (généralement)
+nom des photos                 --> modele-specificité-couleur (généralement)
 //type de rangement par défaut --> marque
 
-type de rangement possible  --> 
+
+type de rangement possible  -->
     marque [déduit du modele]
     lieux de prise de la photo [à remplir par valenting]
     date de prise de la photo [meta]
