@@ -78,7 +78,7 @@ select {
 nav {
     position: fixed;
     height: 100%;
-    background-color: blue;
+    background-color: rgb(35, 35, 80);
 }
 
 

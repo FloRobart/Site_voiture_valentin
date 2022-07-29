@@ -1,0 +1,71 @@
+body {
+  padding-left: 60px;
+}
+
+.debugspacer {
+  padding-top: 1000px;
+}
+
+/* Left menu */
+.left-menu {
+	left: 0;
+	z-index: 2;
+	color : #fff;
+	width: 60px;
+	height: 100%; /* Safari iOS fix */
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: fixed;
+	background-color: #3498DB;
+  transition: width .3s;
+  -webkit-transition: width .3s;
+}
+
+.left-menu > ul > li > a > span {
+	display: none;
+}
+
+.extended > ul > li > a > span {
+	display: inline-block;
+  text-decoration: none;
+}
+
+.extended {
+	width: 200px;
+}
+
+.left-menu::-webkit-scrollbar { 
+    display: none; 
+}
+
+.left-menu > ul {
+	/* Clearfix */
+	padding: 0px;
+	list-style-type: none;
+}
+
+.left-menu-nav-icon {
+
+}
+
+.left-menu > ul > li > a {
+	color : #fff;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	display: block;
+	font-size: 24px;
+	line-height: 60px;
+	transition: background-color .3s;
+  white-space: nowrap;
+}
+
+.left-menu > ul > li > a:hover {
+	color : #fff;
+	background-color: #2980B9;
+}
+
+.left-menu-nav-icon {
+	color : #fff;
+	background-color: #5DB9F7;
+}
