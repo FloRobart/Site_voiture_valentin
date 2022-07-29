@@ -9,6 +9,11 @@
     --CoulPolice  : red;
 
     --TailleTitre : 32px;
+
+    /* Taille des éléments de recherche */
+    --TailleSearchBar  : calc(var(--TailleBtnValider) + var(--TailleLstChoix));
+    --TailleBtnValider : 62px;
+    --TailleLstChoix   : 158px;
 }
 
 
@@ -41,30 +46,40 @@ h1 {
 /* Ensemble de la partie recherche */
 .recherche {
     float : right;
+    margin-right : 10px;
     margin-top : -44px;
+    
 }
 
 
 /* Barre de recherche */
-input {
-    resize        : none;
-    overflow      : hidden;
+.searchBar {
+    width         : var(--TailleSearchBar);
 }
 
 
 /* Liste de trie */
-
+select {
+    width: var(--TailleLstChoix);
+}
 
 
 /* Bouton valider */
-
+.btnValider {
+    width: var(--TailleBtnValider);
+}
 
 
 
 /*---------------*/
 /* CORPS de page */
 /*---------------*/
-
+/* Navigation */
+nav {
+    position: fixed;
+    height: 100%;
+    background-color: blue;
+}
 
 
 
