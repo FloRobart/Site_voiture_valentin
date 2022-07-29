@@ -8,7 +8,7 @@
     --StylePolice : Dubai Light;
     --CoulPolice  : red;
 
-    --TailleTitre : 32px;
+    --TailleTitre1 : 32px;
 
     /* Taille des éléments de recherche */
     --TailleSearchBar  : calc(var(--TailleBtnValider) + var(--TailleLstChoix));

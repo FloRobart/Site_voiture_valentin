@@ -5,14 +5,9 @@
 html, body {
   min-height: 100%;
   margin: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #eeeeee), color-stop(0.50, #ffffff),color-stop(1.00, #dddddd));
-  background: -webkit-linear-gradient(90deg,#dddddd,#ffffff,#eeeeee);
-  background: -moz-linear-gradient(90deg,#dddddd,#ffffff,#eeeeee);
-  background: -o-linear-gradient(90deg,#dddddd,#ffffff,#eeeeee);
-  background: linear-gradient(90deg,#dddddd,#ffffff,#eeeeee);
-  background-repeat: no-repeat;
   font-family: arial,sans-serif;
 }
+
 a { text-decoration: none; color:inherit; }
 a:visited{ color:inherit;}
 .main-header {
@@ -128,9 +123,6 @@ a:visited{ color:inherit;}
   transition: width 0.3s ease;
   z-index: 999;				/*on le met par dessus tout, pour éviter que le sous-menu passe par dessus le contenu, lorsqu'il est ouvert et que le menu principal est fermé*/
 }
-.content {
-  padding: 100px 20px 20px 20px;
-}
 
 .close-menu {
   display: none;
@@ -160,6 +152,4 @@ a:visited{ color:inherit;}
 }
 #part-nav-check:checked ~ #ss_part {
   height: 104px;
-}
-#part-nav-check:checked~ #other_links{
 }
