@@ -9,12 +9,12 @@ html, body {
     background-color: black;
 }
 
-.toggle-menu {
+.A3 {
     color : white;
 }
 
 /*********labels qui servent de boutton*********/
-.main-header .toggle-menu{
+.A6 .A3{
     position: absolute;
     left: 20px;
     top: 20px;
@@ -38,12 +38,12 @@ html, body {
 } */
 
 /*************checkbox**************/
-.main-nav-check , .part-nav-check{
+.A1 , .A4{
     display: none;
 }
 
 /**************nav principal***************/
-.main-nav {
+.A2 {
     position: fixed;
     top: 0;
     width: 20%;
@@ -56,7 +56,7 @@ html, body {
 }
 
 /***********liens dans le nav principal**************/
-/* .main-nav a{
+/* .A2 a{
     display: block;
     background: #3E3E3E;
     background: linear-gradient(#3E3E3E, #383838);
@@ -97,7 +97,7 @@ html, body {
 
 
 
-.page-wrap {/*************contenu du site***************/
+.A5 {/*************contenu du site***************/
     position:relative;
     float: right;
     width: 80%;
@@ -107,19 +107,19 @@ html, body {
 
 
 /*lorsque le symbole du nav est coché*/
-#main-nav-check:checked + #main-nav {				/* note: note: la checkbox est coché par defaut*/
+#A1:checked + #A2 {				/* note: note: la checkbox est coché par defaut*/
     width: 0;											/*on cache le nav*/
 }
-#main-nav-check:checked  ~ .page-wrap {
+#A1:checked  ~ .A5 {
     width: 100%;										/*le contenu prend toute la place*/
 }
-#main-nav-check:checked ~ .page-wrap .close-menu {
+#A1:checked ~ .A5 .close-menu {
     display: block;
 }
-#main-nav-check:checked ~ .page-wrap .open-menu {
+#A1:checked ~ .A5 .open-menu {
     display: none; 
 }
-#main-nav-check:checked ~ .page-wrap .main-header {
+#A1:checked ~ .A5 .A6 {
     width: 100%;									/*le header prend tout la largeur*/
     left: 0;										/*aucun espace à gauche*/
 }
@@ -127,6 +127,6 @@ html, body {
 
 
 /*losrque "Section1" est coché*/
-#part-nav-check:checked ~ #ss_part {
+#A4:checked ~ #ss_part {
     height: 104px;
 }
