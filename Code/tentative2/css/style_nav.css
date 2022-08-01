@@ -1,3 +1,10 @@
+:root{
+    --tailleBordureNav : 3%;
+}
+
+
+
+
 * {
     box-sizing: border-box;
 }
@@ -9,41 +16,18 @@ html, body {
     background-color: black;
 }
 
-.A3 {
+.labelFonction1, .labelFonction2 {
     color : white;
 }
 
-/*********labels qui servent de boutton*********/
-.A6 .A3{
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-/* #ss_part_toggle {
-    position: relative;
-    cursor: pointer;
-    display: block;
-    background: #3E3E3E;
-    background: -webkit-linear-gradient(90deg, #383838, #3e3e3e);
-    background: linear-gradient(#3E3E3E, #383838);
-    border-top: 1px solid #484848;
-    border-bottom: 1px solid #2E2E2E;
-    padding: 15px;
-    color: #BDBDBD;
-    text-shadow: #727272 0px -1px 1px;
-    font-weight: bold;
-} */
 
 /*************checkbox**************/
-.A1 , .A4{
+.menu , .sousMenu{
     display: none;
 }
 
 /**************nav principal***************/
-.A2 {
+.navigation {
     position: fixed;
     top: 0;
     width: 20%;
@@ -56,7 +40,7 @@ html, body {
 }
 
 /***********liens dans le nav principal**************/
-/* .A2 a{
+/* .navigation a{
     display: block;
     background: #3E3E3E;
     background: linear-gradient(#3E3E3E, #383838);
@@ -97,7 +81,7 @@ html, body {
 
 
 
-.A5 {/*************contenu du site***************/
+.ensPage {/*************contenu du site***************/
     position:relative;
     float: right;
     width: 80%;
@@ -107,19 +91,19 @@ html, body {
 
 
 /*lorsque le symbole du nav est coché*/
-#A1:checked + #A2 {				/* note: note: la checkbox est coché par defaut*/
+#menu:checked + #navigation {				/* note: note: la checkbox est coché par defaut*/
     width: 0;											/*on cache le nav*/
 }
-#A1:checked  ~ .A5 {
+#menu:checked  ~ .ensPage {
     width: 100%;										/*le contenu prend toute la place*/
 }
-#A1:checked ~ .A5 .close-menu {
+#menu:checked ~ .ensPage .close-menu {
     display: block;
 }
-#A1:checked ~ .A5 .open-menu {
+#menu:checked ~ .ensPage .open-menu {
     display: none; 
 }
-#A1:checked ~ .A5 .A6 {
+#menu:checked ~ .ensPage {
     width: 100%;									/*le header prend tout la largeur*/
     left: 0;										/*aucun espace à gauche*/
 }
@@ -127,6 +111,36 @@ html, body {
 
 
 /*losrque "Section1" est coché*/
-#A4:checked ~ #ss_part {
+#sousMenu:checked ~ #ss_part {
     height: 104px;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+.borderNav {
+    position: fixed;
+    cursor: pointer;
+    background-color: blue;
+    height: 100%;
+    width: var(--tailleBordureNav);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.labelFonction2 {
+    line-height: 1000%;
+    /* vertical-align: middle; */
+}
+
+.borderNav::after {
+    content : "◀";
+    /* ☰ */
+}
+
+#menu:checked ~ .ensPage .borderNav::after {
+    content : "▶";
+}
+
+main {
+    margin-left: calc(var(--tailleBordureNav) + 1% + 20px);
 }

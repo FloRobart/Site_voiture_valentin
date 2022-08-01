@@ -1,35 +1,33 @@
 <!DOCTYPE html>
-<html lang="fr" >
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<title>css left menu</title>
+		<title>Site valoch Propre</title>
 		<link rel="stylesheet" href="./css/autre_style.css" type="text/css" />
-        <link rel="stylesheet" href="./css/style_nav.css" type="text/css" />
+        <link rel="stylesheet" href="./css/style_nav.css"   type="text/css" />
+		<!-- <meta http-equiv="refresh" content="3" /> -->
 	</head>
 
 
 
 	<body>
-		<input type="checkbox" class="A1" id="A1" checked="checked" /> <!--checkbox note: la checkbox est coché par defaut -->
-		<nav class="A2" id="A2">										<!--NAV-->
-			<label for="A4" class="A3" id="ss_part_toggle">	<!--SYMBOLE OU MOT QUI SERVIRA DE BOUTTON POUR LE SOUS-MENU-->
+		<input type="checkbox" class="menu" id="menu" checked="checked" />  <!--checkbox note: la checkbox est coché par defaut -->
+		<nav class="navigation" id="navigation">									<!--NAV-->
+			<label for="sousMenu" class="labelFonction1">	                        <!--SYMBOLE OU MOT QUI SERVIRA DE BOUTTON POUR LE SOUS-MENU-->
 				Section1
 			</label>
-			<input type="checkbox" class="A4" id="A4" />	<!--checkbox du sous-menu-->
+			<input type="checkbox" class="sousMenu" id="sousMenu" />	<!--checkbox du sous-menu-->
 			<div id="ss_part">														<!--sous-menu-->
 				<a href="#">Part1</a>
 				<a href="#">Part2</a>
 			</div>
 		</nav>
 		
-		<div class="A5">														<!--La page-->
-			<div class="A6">											<!--le header-->
-				<label for="A1" class="A3">					<!--LE SYMBOLE QUI SERVIRA DE BOUTTON POUR AFFICHER LE NAV A GAUCHE-->
-				  ☰
-				  <!-- test -->
-				</label>
-			</div>
-			<div> 
+		<div class="ensPage">												<!--La page-->
+			<label for="menu" class="labelFonction2">						<!--LE SYMBOLE QUI SERVIRA DE BOUTTON POUR AFFICHER LE NAV A GAUCHE-->
+				<div class="borderNav">
+				</div>
+			</label>
 				<!--CONTENU DU SITE-->
 				<header>
 					<h1> VALENTIN GALLETYER </h1>
