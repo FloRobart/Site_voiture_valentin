@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+}
+
+.toggle-menu {
+    color : white;
+}
+
+/*********labels qui servent de boutton*********/
+.main-header .toggle-menu{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* #ss_part_toggle {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    background: #3E3E3E;
+    background: -webkit-linear-gradient(90deg, #383838, #3e3e3e);
+    background: linear-gradient(#3E3E3E, #383838);
+    border-top: 1px solid #484848;
+    border-bottom: 1px solid #2E2E2E;
+    padding: 15px;
+    color: #BDBDBD;
+    text-shadow: #727272 0px -1px 1px;
+    font-weight: bold;
+} */
+
+/*************checkbox**************/
+.main-nav-check , .part-nav-check{
+    display: none;
+}
+
+/**************nav principal***************/
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    background: #3B3B3B;
+    overflow: auto;
+    transition: width 0.3s ease;
+    margin:0;
+    padding: 0;
+}
+
+/***********liens dans le nav principal**************/
+/* .main-nav a{
+    display: block;
+    background: #3E3E3E;
+    background: linear-gradient(#3E3E3E, #383838);
+    border-top: 1px solid #484848;
+    border-bottom: 1px solid #2E2E2E;
+    color: #BDBDBD;
+    text-shadow: #727272 0px -1px 1px;
+    font-weight: bold;
+    padding: 15px;
+} */
+
+
+/*************sous nav****************/
+#ss_part{
+    width: 100%;
+    top: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    margin:0;
+    padding: 0;
+    background: #3B3B3B;
+}
+
+
+#ss_part a{/*************liens du sous nav**********/
+    display: inline-block;
+    width: 100%;
+    color: #888;
+    padding-left: 35px;
+    background: #2B2B2B;
+    background: linear-gradient(#2B2B2B, #262626);
+    border-top: 1px solid #2E2E2E;
+    border-bottom: 1px solid #1C1C1C;
+}
+
+
+
+
+
+.page-wrap {/*************contenu du site***************/
+    position:relative;
+    float: right;
+    width: 80%;
+    transition: width 0.3s ease;
+    z-index: 999; /*on le met par dessus tout, pour éviter que le sous-menu passe par dessus le contenu, lorsqu'il est ouvert et que le menu principal est fermé*/
+}
+
+
+/*lorsque le symbole du nav est coché*/
+#main-nav-check:checked + #main-nav {				/* note: note: la checkbox est coché par defaut*/
+    width: 0;											/*on cache le nav*/
+}
+#main-nav-check:checked  ~ .page-wrap {
+    width: 100%;										/*le contenu prend toute la place*/
+}
+#main-nav-check:checked ~ .page-wrap .close-menu {
+    display: block;
+}
+#main-nav-check:checked ~ .page-wrap .open-menu {
+    display: none; 
+}
+#main-nav-check:checked ~ .page-wrap .main-header {
+    width: 100%;									/*le header prend tout la largeur*/
+    left: 0;										/*aucun espace à gauche*/
+}
+
+
+
+/*losrque "Section1" est coché*/
+#part-nav-check:checked ~ #ss_part {
+    height: 104px;
+}

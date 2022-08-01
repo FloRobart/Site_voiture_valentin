@@ -21,10 +21,10 @@
 /*---------------------*/
 /* ENSEMBLE de la page */
 /*---------------------*/
-*{
+/* *{
     margin : 0px;
     padding : 0px;
-}
+} */
 
 html {
     background-color: var(--CoulFond);
@@ -75,7 +75,7 @@ select {
 /* CORPS de page */
 /*---------------*/
 /* Navigation */
-nav {
+.maNav {
     position: fixed;
     height: 100%;
     background-color: rgb(35, 35, 80);
