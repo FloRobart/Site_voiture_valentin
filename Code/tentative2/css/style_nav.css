@@ -12,11 +12,10 @@
 html, body {
     min-height: 100%;
     margin: 0;
-    font-family: arial,sans-serif;
     background-color: black;
 }
 
-.labelFonction1, .labelFonction2 {
+.labelMenu1, .labelBorderNav {
     color : white;
 }
 
@@ -127,8 +126,8 @@ html, body {
     vertical-align: middle;
 }
 
-.labelFonction2 {
-    line-height: 1000%;
+.labelBorderNav {
+    padding-top: 100px;
     /* vertical-align: middle; */
 }
 
@@ -147,4 +146,15 @@ main {
 
 .navigation {
     text-align: center;
+}
+
+.instagram {
+    width: 10%;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-bottom : 0px;
+}
+
+.test {
+    width: 100%;
 }
