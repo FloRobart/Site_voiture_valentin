@@ -144,3 +144,7 @@ html, body {
 main {
     margin-left: calc(var(--tailleBordureNav) + 1% + 20px);
 }
+
+.navigation {
+    text-align: center;
+}
