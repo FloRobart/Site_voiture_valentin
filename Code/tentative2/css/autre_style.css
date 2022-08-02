@@ -6,7 +6,7 @@
 
     /* Police d'écriture */
     --StylePolice : Dubai Light;
-    --CoulPolice  : red;
+    --CoulPolice  : gray;
 
     --TailleTitre1 : 32px;
 
@@ -21,10 +21,10 @@
 /*---------------------*/
 /* ENSEMBLE de la page */
 /*---------------------*/
-/* *{
+*{
     margin : 0px;
     padding : 0px;
-} */
+}
 
 html {
     background-color: var(--CoulFond);
@@ -40,12 +40,13 @@ html {
 /* Titre principale */
 h1 {
     text-align : center;
+    color : red;
 }
 
 
 /* Ensemble de la partie recherche */
 .recherche {
-    position: relative;
+    position : relative;
     float : right;
     margin-right : 10px;
     /* margin-top : -53px; */
