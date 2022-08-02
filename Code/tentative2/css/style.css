@@ -1,0 +1,171 @@
+/*-----------*/
+/* Variables */
+/*-----------*/
+:root{
+    --CoulFond : black;
+
+    /* Police d'écriture */
+    --StylePolice : Dubai Light;
+    --CoulPolice  : gray;
+
+    --TailleTitre1 : 32px;
+
+    /* Taille des éléments de recherche */
+    --TailleSearchBar  : calc(var(--TailleBtnValider) + var(--TailleLstChoix) + 4px);
+    --TailleBtnValider : 62px;
+    --TailleLstChoix   : 158px;
+
+    /* Taille des éléments de navigation */
+    --tailleBordureNav : 2%;
+    --tailleNav : 15%;
+}
+
+
+
+/*---------------------*/
+/* ENSEMBLE de la page */
+/*---------------------*/
+*         { margin  : 0; box-sizing: border-box; }
+*:not(ul) { padding : 0; }
+
+
+html {
+    background-color: var(--CoulFond);
+    font-family: var(--StylePolice);
+    color : var(--CoulPolice);
+}
+
+
+
+/*--------------*/
+/* HAUT de page */
+/*--------------*/
+/* Titre principale */
+h1 {
+    /* position: static; */
+    margin-left: var(--TailleSearchBar);
+    text-align : center;
+    color : red;
+}
+
+
+/* Ensemble de la partie recherche */
+.recherche {
+    position:relative;
+    float: right;
+    margin-right : 5px;
+}
+
+
+/* Barre de recherche */
+.searchBar { width : var(--TailleSearchBar); }
+
+
+/* Liste de trie */
+select { width: var(--TailleLstChoix); }
+
+
+/* Bouton valider */
+.btnValider { width: var(--TailleBtnValider); }
+
+
+
+/*------------*/
+/* Navigation */
+/*------------*/
+/* Ensemble de la navigation */
+nav {
+    position: fixed;
+    width: var(--tailleNav);
+    height: 100%;
+    overflow: auto;
+    transition: width 0.5s ease;
+    text-align: center;
+}
+
+
+/* checkbox pour ouvrir et fermer le menu */
+.menu { display: none; }
+
+
+/* Bodure de la navigation */
+.borderNav {
+    position: fixed;
+    cursor: pointer;
+    background-color: gray;
+    height: 100%;
+    width: var(--tailleBordureNav);
+    text-align: center;
+}
+
+
+/* Ecriture dans la bordure de la navigation quand le menu est ouvert */
+.borderNav::after {
+    content : "◀";
+    height: 100%;
+    color : white;
+}
+
+
+/* Ecriture dans la bordure de la navigation quand le menu est fermer */
+#menu:checked ~ .ensPage .borderNav::after {
+    content : "▶";
+    height: 100%;
+}
+
+
+/* Instagram */
+.instagram {
+    width: 25%;
+}
+
+.imageInsta {
+    width: 100%;
+}
+
+
+/* Liste dans la navigation */
+.navigation ul {
+    list-style-type: none;
+    text-align: left;
+    margin-top: 50%;
+}
+
+
+/* lorsque le symbole du nav est coché */
+#menu:checked + nav                  { width  : 0;     }
+#menu:checked ~ .ensPage .close-menu { display: block; }
+#menu:checked ~ .ensPage .open-menu  { display: none;  }
+#menu:checked ~ .ensPage             { width  : 100%;  }
+
+
+
+/*---------------*/
+/* CORPS de page */
+/*---------------*/
+/* Ensemble du corps de la page + la bordure de navigation */
+.ensPage {
+    position : relative;
+    float : right;
+    width : calc(100% - var(--tailleNav));
+    transition: width 0.5s ease;
+}
+
+
+/* Ensemble du corps de la page */
+main {
+    margin-top : 80px;
+    margin-right : calc(1% + 20px);
+    margin-left: calc(var(--tailleBordureNav) + 1% + 20px);
+    text-align: justify;
+}
+
+
+
+
+/*------*/
+/* Test */
+/*------*/
+.test {
+    width: 10%;
+}
