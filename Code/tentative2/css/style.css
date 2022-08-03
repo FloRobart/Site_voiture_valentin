@@ -6,7 +6,8 @@
 
     /* Police d'écriture */
     --StylePolice : Dubai Light;
-    /* --CoulPolice  : gray; */
+    --CoulPolice  : white;
+    --coulTitre   : red;
 
     --TailleTitre1 : 32px;
 
@@ -18,7 +19,13 @@
     /* Taille des éléments de navigation */
     --tailleBordureNav : 2%;
     --tailleNav : 15%;
-    --tailleImgInsta : 20%;
+    --tailleImgInsta : calc(var(--tailleNav) + 5%);
+
+    --tailleDelimitation : 1px;
+
+    /* Couleur de la bordure de navigation */
+    --CoulBordureNav : gray;
+    --CoulDelimitation : black;
 }
 
 
@@ -34,7 +41,7 @@
 html {
     background-color: var(--CoulFond);
     font-family: var(--StylePolice);
-    /* color : var(--CoulPolice); */
+    color : var(--CoulPolice);
 }
 
 
@@ -47,7 +54,7 @@ h1 {
     /* position: static; */
     margin-left: var(--TailleSearchBar);
     text-align : center;
-    color : red;
+    color : var(--coulTitre);
 }
 
 
@@ -83,6 +90,10 @@ nav {
     overflow: auto;
     transition: width 0.5s ease;
     text-align: center;
+    background-color: var(--CoulBordureNav);
+
+    /* delimiitation entre la navigation et la bordure de la navigation */
+    border-right: solid var(--CoulDelimitation) var(--tailleDelimitation);
 }
 
 
@@ -94,7 +105,7 @@ nav {
 .borderNav {
     position: fixed;
     cursor: pointer;
-    background-color: gray;
+    background-color: var(--CoulBordureNav);
     height: 100%;
     width: var(--tailleBordureNav);
     text-align: center;
@@ -105,7 +116,6 @@ nav {
 .borderNav::after {
     content : "◀";
     height: 100%;
-    color : white;
 }
 
 
@@ -123,6 +133,7 @@ nav {
 
 .imageInsta {
     width: 100%;
+    filter: invert(100%);
 }
 
 
@@ -132,14 +143,19 @@ nav {
     text-align: center;
     margin-top: 50%;
     width: 80%;
+
+    font-weight: bold;
 }
 
+
+li {
+    margin-top : var(--tailleNav);
+}
+
+/* Style des liens */
 a {
     text-decoration: none;
-
-    color: var(--CoulFond);
-    filter: invert(100%);
-    font-weight : bold;
+    color : var(--CoulPolice);
 }
 
 
@@ -171,13 +187,16 @@ main {
     text-align: justify;
 }
 
-p {
-    filter: invert(100%);
-    font-weight: bold;
-}
-
 
 
 /*------*/
 /* Test */
 /*------*/
+img {
+    width: 50%;
+    /* display: inline; */
+}
+
+.test {
+    display: grid;
+}
