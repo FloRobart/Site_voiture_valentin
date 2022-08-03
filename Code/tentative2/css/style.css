@@ -6,7 +6,7 @@
 
     /* Police d'écriture */
     --StylePolice : Dubai Light;
-    --CoulPolice  : gray;
+    /* --CoulPolice  : gray; */
 
     --TailleTitre1 : 32px;
 
@@ -23,6 +23,7 @@
 
 
 
+
 /*---------------------*/
 /* ENSEMBLE de la page */
 /*---------------------*/
@@ -33,7 +34,7 @@
 html {
     background-color: var(--CoulFond);
     font-family: var(--StylePolice);
-    color : var(--CoulPolice);
+    /* color : var(--CoulPolice); */
 }
 
 
@@ -120,7 +121,9 @@ nav {
     width: var(--tailleImgInsta);
 }
 
-.imageInsta { width: 100%; }
+.imageInsta {
+    width: 100%;
+}
 
 
 /* Liste dans la navigation */
@@ -133,7 +136,10 @@ nav {
 
 a {
     text-decoration: none;
-    color: white;
+
+    color: var(--CoulFond);
+    filter: invert(100%);
+    font-weight : bold;
 }
 
 
@@ -163,6 +169,11 @@ main {
     margin-right : calc(1% + 20px);
     margin-left: calc(var(--tailleBordureNav) + 1% + 20px);
     text-align: justify;
+}
+
+p {
+    filter: invert(100%);
+    font-weight: bold;
 }
 
 
