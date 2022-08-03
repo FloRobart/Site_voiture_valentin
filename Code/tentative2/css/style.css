@@ -18,6 +18,7 @@
     /* Taille des éléments de navigation */
     --tailleBordureNav : 2%;
     --tailleNav : 15%;
+    --tailleImgInsta : 20%;
 }
 
 
@@ -116,19 +117,23 @@ nav {
 
 /* Instagram */
 .instagram {
-    width: 25%;
+    width: var(--tailleImgInsta);
 }
 
-.imageInsta {
-    width: 100%;
-}
+.imageInsta { width: 100%; }
 
 
 /* Liste dans la navigation */
 .navigation ul {
     list-style-type: none;
-    text-align: left;
+    text-align: center;
     margin-top: 50%;
+    width: 80%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -162,10 +167,6 @@ main {
 
 
 
-
 /*------*/
 /* Test */
 /*------*/
-.test {
-    width: 10%;
-}
