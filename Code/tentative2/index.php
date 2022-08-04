@@ -71,11 +71,11 @@
 					closedir($dossier);
 				?>
 
-				<div class="test">
+				<div class="lignePhoto">
 					<img src="../../Photo/photo_valentin/2021-06-07__21.24.20.jpeg" class="portrait">
 					<img src="../../Photo/photo_valentin/2020-07-06__13.46.58.jpeg" class="paysage">
 				</div>
-				<div class="test">
+				<div class="lignePhoto">
 					<img src="../../Photo/photo_valentin/2020-07-06__13.46.58.jpeg" class="paysage">
 					<img src="../../Photo/photo_valentin/2021-06-07__21.24.20.jpeg" class="portrait">
 				</div>

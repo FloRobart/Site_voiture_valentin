@@ -2,30 +2,43 @@
 /* Variables */
 /*-----------*/
 :root{
-    --CoulFond : white;
+    --coulFond : white;
 
     /* Police d'écriture */
-    --StylePolice : Dubai Light;
-    --CoulPolice  : black;
+    --stylePolice : Dubai Light;
+    --coulPolice  : black;
     --coulTitre   : red;
 
-    --TailleTitre1 : 32px;
+    --tailleTitre1 : 32px;
+
 
     /* Taille des éléments de recherche */
-    --TailleSearchBar  : calc(var(--TailleBtnValider) + var(--TailleLstChoix) + 4px);
-    --TailleBtnValider : 62px;
-    --TailleLstChoix   : 158px;
+    --tailleSearchBar  : calc(var(--tailleBtnValider) + var(--tailleLstChoix) + 4px);
+    --tailleBtnValider : 62px;
+    --tailleLstChoix   : 158px;
+
 
     /* Taille des éléments de navigation */
     --tailleBordureNav : 2%;
     --tailleNav : 15%;
     --tailleImgInsta : calc(var(--tailleNav) + 5%);
 
-    --tailleDelimitation : 1px;
+    --tailleDelimitation : 1px; /* taille du traie qui délimite la navigation et la bordure de navigation */
 
-    /* Couleur de la bordure de navigation */
-    --CoulBordureNav : gray;
-    --CoulDelimitation : black;
+
+    /* Taille des éléments de la page d'accueil */
+    --tailleImgPortrait : 28.5%;
+    --tailleImgPaysage : 63.3%;
+
+    --espacementImage : var(--tailleBordureNav); /* Espacement entre les images */
+
+
+    /* Couleur des éléments de navigation */
+    --coulBordureNav : Lightgray;
+    --coulDelimitation : black; /* couleur du traie qui délimite la navigation et la bordure de navigation */
+
+
+
 }
 
 
@@ -39,9 +52,9 @@
 
 
 html {
-    background-color: var(--CoulFond);
-    font-family: var(--StylePolice);
-    color : var(--CoulPolice);
+    background-color: var(--coulFond);
+    font-family: var(--stylePolice);
+    color : var(--coulPolice);
 }
 
 
@@ -52,7 +65,7 @@ html {
 /* Titre principale */
 h1 {
     /* position: static; */
-    margin-left: var(--TailleSearchBar);
+    margin-left: var(--tailleSearchBar);
     text-align : center;
     color : var(--coulTitre);
 }
@@ -67,15 +80,15 @@ h1 {
 
 
 /* Barre de recherche */
-.searchBar { width : var(--TailleSearchBar); }
+.searchBar { width : var(--tailleSearchBar); }
 
 
 /* Liste de trie */
-select { width: var(--TailleLstChoix); }
+select { width: var(--tailleLstChoix); }
 
 
 /* Bouton valider */
-.btnValider { width: var(--TailleBtnValider); }
+.btnValider { width: var(--tailleBtnValider); }
 
 
 
@@ -90,10 +103,10 @@ nav {
     overflow: auto;
     transition: width 0.5s ease;
     text-align: center;
-    background-color: var(--CoulBordureNav);
+    background-color: var(--coulBordureNav);
 
     /* delimiitation entre la navigation et la bordure de la navigation */
-    border-right: solid var(--CoulDelimitation) var(--tailleDelimitation);
+    border-right: solid var(--coulDelimitation) var(--tailleDelimitation);
 }
 
 
@@ -105,7 +118,7 @@ nav {
 .borderNav {
     position: fixed;
     cursor: pointer;
-    background-color: var(--CoulBordureNav);
+    background-color: var(--coulBordureNav);
     height: 100%;
     width: var(--tailleBordureNav);
     text-align: center;
@@ -115,17 +128,14 @@ nav {
 /* Ecriture dans la bordure de la navigation quand le menu est ouvert */
 .borderNav::after {
     content : "◀";
-    /* content : url(../../../Photo/fleche_gauche.png); */
-    height  : 100%;
+    color: white;
 }
 
 
 /* Ecriture dans la bordure de la navigation quand le menu est fermer */
 #menu:checked ~ .ensPage .borderNav::after {
     content : "▶";
-    /* content : url(../../../Photo/fleche_droite.png); */
-    height  : 100%;
-    /* width: var(--tailleNav); */
+    color: white;
 }
 
 
@@ -158,7 +168,7 @@ li {
 /* Style des liens */
 a {
     text-decoration: none;
-    color : var(--CoulPolice);
+    color : var(--coulPolice);
 }
 
 
@@ -184,10 +194,32 @@ a {
 
 /* Ensemble du corps de la page */
 main {
-    margin-top : 80px;
-    margin-right : calc(1% + 20px);
-    margin-left: calc(var(--tailleBordureNav) + 1% + 20px);
-    text-align: justify;
+    margin-left: var(--tailleBordureNav);
+
+    margin-top : var(--espacementImage);
+}
+
+
+/* Photo de voiture */
+main img {
+    margin-right  : var(--espacementImage);
+}
+
+
+/* ajustement de la taille en fonction du format de l'image */
+.portrait {
+    width: var(--tailleImgPortrait);
+}
+
+.paysage {
+    width: var(--tailleImgPaysage);
+}
+
+
+/* groupe les photos par deux */
+.lignePhoto {
+    margin-top: calc(var(--espacementImage) * 4);
+    margin-left: calc(var(--espacementImage) * 2.8);
 }
 
 
@@ -195,21 +227,3 @@ main {
 /*------*/
 /* Test */
 /*------*/
-main img {
-    margin-right: var(--tailleBordureNav);
-}
-
-.portrait {
-    width: 31%;
-    height: 100%;
-}
-
-.paysage {
-    width: 69%;
-    height: 100%;
-}
-
-.test {
-    display: flex;
-    margin-top: var(--tailleBordureNav);
-}
