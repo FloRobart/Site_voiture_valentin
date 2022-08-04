@@ -2,11 +2,11 @@
 /* Variables */
 /*-----------*/
 :root{
-    --CoulFond : black;
+    --CoulFond : white;
 
     /* Police d'écriture */
     --StylePolice : Dubai Light;
-    --CoulPolice  : white;
+    --CoulPolice  : black;
     --coulTitre   : red;
 
     --TailleTitre1 : 32px;
@@ -115,14 +115,17 @@ nav {
 /* Ecriture dans la bordure de la navigation quand le menu est ouvert */
 .borderNav::after {
     content : "◀";
-    height: 100%;
+    /* content : url(../../../Photo/fleche_gauche.png); */
+    height  : 100%;
 }
 
 
 /* Ecriture dans la bordure de la navigation quand le menu est fermer */
 #menu:checked ~ .ensPage .borderNav::after {
     content : "▶";
-    height: 100%;
+    /* content : url(../../../Photo/fleche_droite.png); */
+    height  : 100%;
+    /* width: var(--tailleNav); */
 }
 
 
@@ -192,11 +195,21 @@ main {
 /*------*/
 /* Test */
 /*------*/
-img {
-    width: 50%;
-    /* display: inline; */
+main img {
+    margin-right: var(--tailleBordureNav);
+}
+
+.portrait {
+    width: 31%;
+    height: 100%;
+}
+
+.paysage {
+    width: 69%;
+    height: 100%;
 }
 
 .test {
-    display: grid;
+    display: flex;
+    margin-top: var(--tailleBordureNav);
 }

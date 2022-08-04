@@ -53,9 +53,31 @@
 			</header>
 
 			<main>
+				<?php
+					$nom_dossier = '../../Photo/photo_galerie';
+					$dossier = opendir($nom_dossier);
+					$image_info = array();
+
+					while($fichier = readdir($dossier))
+					{
+						if($fichier != '.' && $fichier != '..')
+						{
+							echo $fichier.'<br />';
+							getimagesize($fichier, $image_info);
+							echo $image_info;
+						}
+					}
+
+					closedir($dossier);
+				?>
+
 				<div class="test">
-					<img src="../../Photo/photo_valentin/2021-06-07__21.24.20.jpeg">
-					<img src="../../Photo/photo_valentin/2020-07-06__13.46.58.jpeg">
+					<img src="../../Photo/photo_valentin/2021-06-07__21.24.20.jpeg" class="portrait">
+					<img src="../../Photo/photo_valentin/2020-07-06__13.46.58.jpeg" class="paysage">
+				</div>
+				<div class="test">
+					<img src="../../Photo/photo_valentin/2020-07-06__13.46.58.jpeg" class="paysage">
+					<img src="../../Photo/photo_valentin/2021-06-07__21.24.20.jpeg" class="portrait">
 				</div>
 			</main>
 		</div>
