@@ -52,20 +52,47 @@
 			</header>
 
 			<main>
-                <?php
-                    $nom_dossier = '../Photo/';
+				<?php
+                    $nom_dossier = '../Photo/photo_valentin/';
+
                     $dossier = opendir($nom_dossier);
-                    
-                    while($fichier = readdir($dossier))
+					$cpt = 0;
+                    while($nom_images = readdir($dossier))
                     {
-                        if($fichier != '.' && $fichier != '..')
-                        {
-                            echo $fichier.'<br />';
-                            echo getimagesize($fichier).'<br />';
+						
+                        if($nom_images != '.' && $nom_images != '..')
+						{
+							$chemin = $nom_dossier . $nom_images;
+							$infos_image = @getImageSize($chemin); // '@' est placé devant la fonction getImageSize()pour empêcher l'affichage des erreurs si l'image est absente.
+
+							$largeur_image = $infos_image[0];
+							$hauteur_image = $infos_image[1];
+
+							echo $chemin.' --> '.$hauteur_image.'x'.$largeur_image.'<br />';
+/*
+							if ($largeur_image > $hauteur_image)
+							{
+								$class = 'paysage';
+							}
+							else
+							{
+								$class = 'portrait';
+							}
+*/
+
+							if ($largeur_image != 1350 && $largeur_image != 1080 && $largeur_image != 2700 && $largeur_image != 2160 || $hauteur_image != 1350 && $hauteur_image != 1080 && $hauteur_image != 2700 && $hauteur_image != 2160)
+							{
+									// unlink($chemin);
+									$cpt++;
+							}
+
+
                         }
-                    }
-                    closedir($dossier);
-                ?>
+					}
+					echo $cpt;
+
+					closedir($dossier);
+				?>
 				<div class="lignePhoto">
 					<img src="../Photo/photo_valentin/2021-06-07__21.24.20.jpeg" class="portrait">
 					<img src="../Photo/photo_valentin/2020-07-06__13.46.58.jpeg" class="paysage">

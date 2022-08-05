@@ -26,6 +26,8 @@ caracteristique à mettre dans la bado (en plus des types de rangement) -->
     puissance maximal [site web]
     régime maximal [site web]
 
-
-
 faire une table moteur pour toute les caracteristique moteur
+
+
+
+information photo
