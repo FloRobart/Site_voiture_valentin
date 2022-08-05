@@ -11,7 +11,7 @@
 
 	<body>
 		<!--checkbox note: la checkbox n'est pas coché par defaut -->
-		<input type="checkbox" class="menu" id="menu" /> <!-- checked="checked" -->
+		<input type="checkbox" class="menu" id="menu" checked="checked" />
 		<nav>
 			<div class="instagram"><a href="https://instagram.com/j.v.spot"><img src="../Photo/instagram.png" class="imageInsta"></a></div>
 			<div class="navigation">
@@ -52,6 +52,20 @@
 			</header>
 
 			<main>
+                <?php
+                    $nom_dossier = '../Photo/';
+                    $dossier = opendir($nom_dossier);
+                    
+                    while($fichier = readdir($dossier))
+                    {
+                        if($fichier != '.' && $fichier != '..')
+                        {
+                            echo $fichier.'<br />';
+                            echo getimagesize($fichier).'<br />';
+                        }
+                    }
+                    closedir($dossier);
+                ?>
 				<div class="lignePhoto">
 					<img src="../Photo/photo_valentin/2021-06-07__21.24.20.jpeg" class="portrait">
 					<img src="../Photo/photo_valentin/2020-07-06__13.46.58.jpeg" class="paysage">
