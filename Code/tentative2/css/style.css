@@ -72,7 +72,7 @@ h1 {
 
 
 /* Ensemble de la partie recherche */
-.recherche {
+.divRecherche {
     position:relative;
     float: right;
     margin-right : 5px;
@@ -128,14 +128,14 @@ nav {
 /* Ecriture dans la bordure de la navigation quand le menu est ouvert */
 .borderNav::after {
     content : "◀";
-    color: white;
+    color: var(--coulFond);
 }
 
 
 /* Ecriture dans la bordure de la navigation quand le menu est fermer */
 #menu:checked ~ .ensPage .borderNav::after {
     content : "▶";
-    color: white;
+    color: var(--coulFond);
 }
 
 
@@ -146,7 +146,7 @@ nav {
 
 .imageInsta {
     width: 100%;
-    filter: invert(100%);
+    /* filter: invert(100%); */
 }
 
 
@@ -160,10 +160,10 @@ nav {
     font-weight: bold;
 }
 
-
 li {
     margin-top : var(--tailleNav);
 }
+
 
 /* Style des liens */
 a {
@@ -174,8 +174,6 @@ a {
 
 /* lorsque le symbole du nav est coché */
 #menu:checked + nav                  { width  : 0;     }
-#menu:checked ~ .ensPage .close-menu { display: block; }
-#menu:checked ~ .ensPage .open-menu  { display: none;  }
 #menu:checked ~ .ensPage             { width  : 100%;  }
 
 
@@ -196,7 +194,7 @@ a {
 main {
     margin-left: var(--tailleBordureNav);
 
-    margin-top : var(--espacementImage);
+    margin-top : calc(var(--espacementImage) * 4)
 }
 
 
@@ -218,7 +216,7 @@ main img {
 
 /* groupe les photos par deux */
 .lignePhoto {
-    margin-top: calc(var(--espacementImage) * 4);
+    margin-top: var(--espacementImage);
     margin-left: calc(var(--espacementImage) * 2.8);
 }
 
