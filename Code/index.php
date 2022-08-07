@@ -53,52 +53,71 @@
 
 			<main>
 				<?php
-                    $nom_dossier = '../Photo/photo_valentin/';
+					$paysage = array();
+					$portrait = array();
 
+                    $nom_dossier = '../Photo/photos_voitures/';
                     $dossier = opendir($nom_dossier);
-					$cpt = 0;
+
+					$cptPaysage = 0;
+					$cptPortrait = 0;
                     while($nom_images = readdir($dossier))
                     {
 						
                         if($nom_images != '.' && $nom_images != '..')
 						{
-							$chemin = $nom_dossier . $nom_images;
-							$infos_image = @getImageSize($chemin); // '@' est placé devant la fonction getImageSize()pour empêcher l'affichage des erreurs si l'image est absente.
+							$chemin_image = $nom_dossier . $nom_images;
+							$infos_image = @getImageSize($chemin_image); // '@' est placé devant la fonction getImageSize()pour empêcher l'affichage des erreurs si l'image est absente.
 
 							$largeur_image = $infos_image[0];
 							$hauteur_image = $infos_image[1];
 
-							// echo $chemin.' --> '.$hauteur_image.'x'.$largeur_image.'<br />';
+							// echo $chemin_image.' --> '.$hauteur_image.'x'.$largeur_image.'<br />';
 
 
 							if ($largeur_image != 1350 && $largeur_image != 1080 && $largeur_image != 2700 && $largeur_image != 2160 || $hauteur_image != 1350 && $hauteur_image != 1080 && $hauteur_image != 2700 && $hauteur_image != 2160)
 							{
-								echo $chemin . ' --> image non valide<br />';
+								echo $chemin_image . ' --> image non valide<br />';
 							}
 							else
 							{
 								if ($largeur_image > $hauteur_image)
 								{
-									$class = 'paysage';
+									$paysage[$cptPaysage] = $chemin_image;
+
+									$cptPaysage ++;
 								}
 								else
 								{
-									$class = 'portrait';
+									$portrait[$cptPortrait] = $chemin_image;
+
+									$cptPortrait ++;
 								}
 							}
                         }
 					}
-
 					closedir($dossier);
+
+
+					$cpt = count($paysage);
+					if (count($paysage) > count($portrait))
+					{
+						$cpt = count($portrait);
+					}
+
+					for ($i = 0; $i < $cpt-1; $i+=2)
+					{
+						echo '<div class="lignePhoto">';
+							echo '<img src="'.$paysage[$i].'" class="paysage" />';
+							echo '<img src="'.$portrait[$i].'" class="portrait" />';
+						echo '</div>';
+
+						echo '<div class="lignePhoto">';
+							echo '<img src="'.$portrait[$i+1].'" class="portrait" />';
+							echo '<img src="'.$paysage[$i+1].'" class="paysage" />';
+						echo '</div>';
+					}
 				?>
-				<div class="lignePhoto">
-					<img src="../Photo/photos_voitures/2020-07-06__13.46.58.jpeg" class="portrait">
-					<img src="../Photo/photos_voitures/2021-06-07__21.24.20.jpeg" class="paysage">
-				</div>
-				<div class="lignePhoto">
-					<img src="../Photo/photos_voitures/2020-07-06__13.46.58.jpeg" class="paysage">
-					<img src="../Photo/photos_voitures/2021-06-07__21.24.20.jpeg" class="portrait">
-				</div>
 			</main>
 		</div>
 	</body>

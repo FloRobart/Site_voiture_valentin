@@ -38,7 +38,8 @@
     --coulDelimitation : black; /* couleur du traie qui délimite la navigation et la bordure de navigation */
 
 
-
+    /* durée des animations */
+    --dureeAnimation : 0.5s;
 }
 
 
@@ -101,7 +102,7 @@ nav {
     width: var(--tailleNav);
     height: 100%;
     overflow: auto;
-    transition: width 0.5s ease;
+    transition: width var(--dureeAnimation) ease;
     text-align: center;
     background-color: var(--coulBordureNav);
 
@@ -186,13 +187,13 @@ a {
     position : relative;
     float : right;
     width : calc(100% - var(--tailleNav));
-    transition: width 0.5s ease;
+    transition: width var(--dureeAnimation) ease;
 }
 
 
 /* Ensemble du corps de la page */
 main {
-    margin-left: var(--tailleBordureNav);
+    margin-left: calc(var(--tailleBordureNav) + 5px);
 
     margin-top : calc(var(--espacementImage) * 4)
 }
