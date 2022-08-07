@@ -216,7 +216,7 @@ main img {
 
 
 /* groupe les photos par deux */
-.lignePhoto {
+.lignePhotoNormal {
     margin-top: var(--espacementImage);
     margin-left: calc(var(--espacementImage) * 2.8);
 }

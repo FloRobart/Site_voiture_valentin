@@ -107,15 +107,32 @@
 
 					for ($i = 0; $i < $cpt-1; $i+=2)
 					{
-						echo '<div class="lignePhoto">';
+						echo '<div class="lignePhotoNormal">';
 							echo '<img src="'.$paysage[$i].'" class="paysage" />';
 							echo '<img src="'.$portrait[$i].'" class="portrait" />';
 						echo '</div>';
 
-						echo '<div class="lignePhoto">';
+						echo '<div class="lignePhotoNormal">';
 							echo '<img src="'.$portrait[$i+1].'" class="portrait" />';
 							echo '<img src="'.$paysage[$i+1].'" class="paysage" />';
 						echo '</div>';
+					}
+
+					if (!empty($paysage))
+					{
+						$cpt = count($paysage);
+						while($cpt > 0)
+						{
+							echo '<div class="lignePhotoPaysage">';
+							echo '<img src="'.$paysage[$cpt].'" class="paysage" />';
+							if ($cpt % 2 == count($paysage) % 2)
+							{
+								echo '<img src="'.$paysage[$cpt+1].'" class="paysage" />';
+								$cpt --;
+							}
+							$cpt --;
+							echo '</div>';
+						}
 					}
 				?>
 			</main>
