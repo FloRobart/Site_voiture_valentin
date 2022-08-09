@@ -14,7 +14,7 @@
 		<!--checkbox note: la checkbox n'est pas coché par defaut -->
 		<input type="checkbox" class="menu" id="menu" checked="checked" />
 		<nav>
-			<div class="instagram"><a href="https://instagram.com/j.v.spot"><img src="../Photo/images/instagram.png" class="imageInsta"></a></div>
+			<div class="instagram"><a href="https://instagram.com/j.v.spot" target="_blank"><img src="../Photo/images/instagram.png" class="imageInsta"></a></div>
 			<div class="navigation">
 				<ul>
 					<li><a href="#">Accueil</a></li>
