@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Acceuil</title>
 		<link rel="stylesheet" href="./css/style.css" type="text/css" />
-		<link rel="icon" href="../Photo/images/jvspotlogo.png" type="image/icon" />
+		<link rel="icon" href="../Photo/images/voiture.png" type="image/icon" />
 		<!-- <meta http-equiv="refresh" content="3" /> -->
 	</head>
 
