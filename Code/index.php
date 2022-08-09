@@ -105,33 +105,75 @@
 						$cpt = count($portrait);
 					}
 
-					for ($i = 0; $i < $cpt-1; $i+=2)
+					for ($i = 0; $i < $cpt; $i+=2)
 					{
+						// affichage des photos
 						echo '<div class="lignePhotoNormal">';
 							echo '<img src="'.$paysage[$i].'" class="paysage" />';
 							echo '<img src="'.$portrait[$i].'" class="portrait" />';
 						echo '</div>';
 
-						echo '<div class="lignePhotoNormal">';
-							echo '<img src="'.$portrait[$i+1].'" class="portrait" />';
-							echo '<img src="'.$paysage[$i+1].'" class="paysage" />';
-						echo '</div>';
+						if ($i+1 < $cpt)
+						{
+							echo '<div class="lignePhotoNormal">';
+								echo '<img src="'.$portrait[$i+1].'" class="portrait" />';
+								echo '<img src="'.$paysage[$i+1].'" class="paysage" />';
+							echo '</div>';
+
+							// suppression des photos du tableau
+							$paysage [$i+1] = null;
+							$portrait[$i+1] = null;
+						}
+
+						// suppression des photos du tableau
+						$paysage [$i  ] = null;
+						$portrait[$i  ] = null;
 					}
 
+
+					// affichage des photos paysages restante s'il n'y a plus de photo portrait
 					if (!empty($paysage))
 					{
-						$cpt = count($paysage);
-						while($cpt > 0)
+						$cpt = 0;
+						while($cpt < count($paysage))
 						{
-							echo '<div class="lignePhotoPaysage">';
-							echo '<img src="'.$paysage[$cpt].'" class="paysage" />';
-							if ($cpt % 2 == count($paysage) % 2)
+							if ($paysage[$cpt] != null)
 							{
-								echo '<img src="'.$paysage[$cpt+1].'" class="paysage" />';
-								$cpt --;
+								echo '<div class="lignePhotoPaysage">';
+								echo '<img src="'.$paysage[$cpt].'" />';
+
+								$cpt ++;
+								if ($cpt < count($paysage))
+								{
+									echo '<img src="'.$paysage[$cpt].'" />';
+								}
+								echo '</div>';
 							}
-							$cpt --;
-							echo '</div>';
+
+							$cpt ++;
+						}
+					}
+
+
+					// affichage des photos portraits restante s'il n'y a plus de photo paysage
+					if (!empty($portrait))
+					{
+						$cpt = 0;
+						while($cpt < count($portrait))
+						{
+							if ($portrait[$cpt] != null)
+							{
+								echo '<div class="lignePhotoPortrait">';
+								echo '<img src="'.$portrait[$cpt].'" />';
+
+								$cpt ++;
+								if ($cpt < count($portrait))
+								{
+									echo '<img src="'.$portrait[$cpt].'" />';
+								}
+								echo '</div>';
+							}
+							$cpt ++;
 						}
 					}
 				?>

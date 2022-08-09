@@ -27,8 +27,8 @@
 
 
     /* Taille des éléments de la page d'accueil */
-    --tailleImgPortrait : 28.5%;
-    --tailleImgPaysage : 63.3%;
+    --tailleImgPortrait : 35.5%;
+    --tailleImgPaysage : 55.5%;
 
     --espacementImage : var(--tailleBordureNav); /* Espacement entre les images */
 
@@ -202,6 +202,9 @@ main {
 /* Photo de voiture */
 main img {
     margin-right  : var(--espacementImage);
+
+    /* Bordure noir autour des photos */
+    /* border: solid 2px black; */
 }
 
 
@@ -215,10 +218,32 @@ main img {
 }
 
 
-/* groupe les photos par deux */
+/* groupe les photos par deux, une paysage et une portrait */
 .lignePhotoNormal {
     margin-top: var(--espacementImage);
     margin-left: calc(var(--espacementImage) * 2.8);
+}
+
+
+/* groupe les photos par deux, deux paysages */
+.lignePhotoPaysage {
+    margin-top: var(--espacementImage);
+    margin-left: calc(var(--espacementImage) * 2.8);
+}
+
+.lignePhotoPaysage img {
+    width: var(--tailleImgPaysage);
+}
+
+
+/* groupe les photos par deux, deux portrait */
+.lignePhotoPortrait {
+    margin-top: var(--espacementImage);
+    margin-left: calc(var(--espacementImage) * 2.8);
+}
+
+.lignePhotoPortrait img {
+    width: var(--tailleImgPortrait);
 }
 
 
@@ -226,3 +251,4 @@ main img {
 /*------*/
 /* Test */
 /*------*/
+
