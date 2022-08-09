@@ -225,15 +225,9 @@ main img {
 }
 
 
-/* groupe les photos par deux, deux paysages */
-.lignePhotoPaysage img {
-    width: var(--tailleImgPaysage);
-}
-
-
-/* groupe les photos par deux, deux portrait */
-.lignePhotoPortrait img {
-    width: var(--tailleImgPortrait);
+/* groupe les photos par deux, avec le même format */
+.lignePhotoPaysage img, .lignePhotoPortrait img {
+    width: calc(calc(var(--tailleImgPaysage) + var(--tailleImgPortrait)) / 2);
 }
 
 

@@ -85,7 +85,7 @@
             {
                 if ($paysage[$cpt] != null)
                 {
-                    if ($cpt+1 >=  count($portrait))
+                    if ($cpt+1 >=  count($paysage))
                     {
                         echo '<div class="uniquePhotoPaysage">';
                         echo '<img src="'.$paysage[$cpt].'" />';
@@ -114,7 +114,7 @@
             {
                 if ($portrait[$cpt] != null)
                 {
-                    if ($cpt+1 >=  count($paysage))
+                    if ($cpt+1 >=  count($portrait))
                     {
                         echo '<div class="uniquePhotoPortrait">';
                         echo '<img src="'.$portrait[$cpt].'" />';
