@@ -139,14 +139,21 @@
 						{
 							if ($paysage[$cpt] != null)
 							{
-								echo '<div class="lignePhotoPaysage">';
-								echo '<img src="'.$paysage[$cpt].'" />';
+								if ($cpt+1 >= count($portrait))
+								{
+									echo '<div class="uniquePhotoPaysage">';
+									echo '<img src="'.$paysage[$cpt].'" />';
+									
+								}
+								else
+								{
+									echo '<div class="lignePhotoPaysage">';
+									echo '<img src="'.$paysage[$cpt  ].'" />';
+									echo '<img src="'.$paysage[$cpt+1].'" />';
+								}
 
 								$cpt ++;
-								if ($cpt < count($paysage))
-								{
-									echo '<img src="'.$paysage[$cpt].'" />';
-								}
+
 								echo '</div>';
 							}
 
@@ -173,6 +180,7 @@
 								}
 								echo '</div>';
 							}
+
 							$cpt ++;
 						}
 					}

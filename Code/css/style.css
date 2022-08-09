@@ -209,41 +209,42 @@ main img {
 
 
 /* ajustement de la taille en fonction du format de l'image */
-.portrait {
+.lignePhotoNormal .portrait {
     width: var(--tailleImgPortrait);
 }
 
-.paysage {
+.lignePhotoNormal .paysage {
     width: var(--tailleImgPaysage);
 }
 
 
 /* groupe les photos par deux, une paysage et une portrait */
-.lignePhotoNormal {
+.lignePhotoNormal, .lignePhotoPaysage, .lignePhotoPortrait {
     margin-top: var(--espacementImage);
     margin-left: calc(var(--espacementImage) * 2.8);
 }
 
 
 /* groupe les photos par deux, deux paysages */
-.lignePhotoPaysage {
-    margin-top: var(--espacementImage);
-    margin-left: calc(var(--espacementImage) * 2.8);
-}
-
 .lignePhotoPaysage img {
     width: var(--tailleImgPaysage);
 }
 
 
 /* groupe les photos par deux, deux portrait */
-.lignePhotoPortrait {
-    margin-top: var(--espacementImage);
-    margin-left: calc(var(--espacementImage) * 2.8);
-}
-
 .lignePhotoPortrait img {
     width: var(--tailleImgPortrait);
+}
+
+
+/* Cas où il reste une seul photo en mode paysage */
+.uniquePhotoPaysage img {
+    width: calc(var(--tailleImgPaysage) + var(--espacementImage) + var(--tailleImgPortrait));
+}
+
+/* Cas où il reste une seul photo en mode portrait */
+.uniquePhotoPortrait img {
+    width: calc(var(--tailleImgPortrait) + var(--espacementImage) + var(--tailleImgPaysage));
 }
 
 
