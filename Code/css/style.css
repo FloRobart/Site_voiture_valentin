@@ -219,7 +219,7 @@ main img {
 
 
 /* groupe les photos par deux, une paysage et une portrait */
-.lignePhotoNormal, .lignePhotoPaysage, .lignePhotoPortrait {
+.lignePhotoNormal, .lignePhotoPaysage, .lignePhotoPortrait, .uniquePhotoPaysage, .uniquePhotoPortrait {
     margin-top: var(--espacementImage);
     margin-left: calc(var(--espacementImage) * 2.8);
 }
@@ -237,14 +237,9 @@ main img {
 }
 
 
-/* Cas où il reste une seul photo en mode paysage */
-.uniquePhotoPaysage img {
+/* Cas où il reste une seul photo */
+.uniquePhotoPaysage img, .uniquePhotoPortrait img {
     width: calc(var(--tailleImgPaysage) + var(--espacementImage) + var(--tailleImgPortrait));
-}
-
-/* Cas où il reste une seul photo en mode portrait */
-.uniquePhotoPortrait img {
-    width: calc(var(--tailleImgPortrait) + var(--espacementImage) + var(--tailleImgPaysage));
 }
 
 

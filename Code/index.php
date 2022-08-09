@@ -13,7 +13,7 @@
 		<!--checkbox note: la checkbox n'est pas coché par defaut -->
 		<input type="checkbox" class="menu" id="menu" checked="checked" />
 		<nav>
-			<div class="instagram"><a href="https://instagram.com/j.v.spot"><img src="../Photo/instagram.png" class="imageInsta"></a></div>
+			<div class="instagram"><a href="https://instagram.com/j.v.spot"><img src="../Photo/images/instagram.png" class="imageInsta"></a></div>
 			<div class="navigation">
 				<ul>
 					<li><a href="#">Accueil</a></li>
@@ -139,7 +139,7 @@
 						{
 							if ($paysage[$cpt] != null)
 							{
-								if ($cpt+1 >= count($portrait))
+								if ($cpt+1 >=  count($portrait))
 								{
 									echo '<div class="uniquePhotoPaysage">';
 									echo '<img src="'.$paysage[$cpt].'" />';
@@ -150,10 +150,8 @@
 									echo '<div class="lignePhotoPaysage">';
 									echo '<img src="'.$paysage[$cpt  ].'" />';
 									echo '<img src="'.$paysage[$cpt+1].'" />';
+									$cpt ++;
 								}
-
-								$cpt ++;
-
 								echo '</div>';
 							}
 
@@ -170,17 +168,21 @@
 						{
 							if ($portrait[$cpt] != null)
 							{
-								echo '<div class="lignePhotoPortrait">';
-								echo '<img src="'.$portrait[$cpt].'" />';
-
-								$cpt ++;
-								if ($cpt < count($portrait))
+								if ($cpt+1 >=  count($paysage))
 								{
+									echo '<div class="uniquePhotoPortrait">';
 									echo '<img src="'.$portrait[$cpt].'" />';
+									
+								}
+								else
+								{
+									echo '<div class="lignePhotoPortrait">';
+									echo '<img src="'.$portrait[$cpt  ].'" />';
+									echo '<img src="'.$portrait[$cpt+1].'" />';
+									$cpt ++;
 								}
 								echo '</div>';
 							}
-
 							$cpt ++;
 						}
 					}
