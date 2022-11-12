@@ -1,7 +1,0 @@
-*Photo           ( idPhoto    , datePhoto   , nomPhoto   , idVoiture# )
-*Voiture         ( idVoiture  , nomModele#  , nomType#   )
-*Couleur_Voiture ( idVoiture# , nomCouleur# )
-*Modele          ( nomModele  , nomMarque   )
-*Marque          ( nomMarque  , pays        )
-*Couleur         ( nomCouleur )
-*Type_voiture    ( nomType    )
