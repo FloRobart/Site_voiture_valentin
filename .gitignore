@@ -1,4 +1,4 @@
-# Photo
+# Fichier photos
 *.png
 *.jpg
 *.jpeg
@@ -7,6 +7,10 @@
 *.DNG
 *.NEF
 *.svg
+
+# Fichier d'aide pour la base de données
+*.mcd
+*.mld
 
 # Fichier google drive
 desktop.ini
