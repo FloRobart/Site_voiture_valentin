@@ -6,38 +6,68 @@ DEFAULT COLLATE utf8_general_ci;
 
 
 
--- PHOTO
+--* PHOTO (idPhoto, nomPhoto, datePhoto, (F) lieuxPhoto)
 CREATE TABLE PHOTO (
     idPhoto    SERIAL PRIMARY KEY,
-    nomPhoto   VARCHAR(42),
-    datePhoto  DATE,
-    idVoiture  INT REFERENCES VOITURE (idvoiture)
+    nomPhoto   TEXT   NOT NULL   ,
+    datePhoto  DATE   NOT NULL   ,
+    lieuxPhoto TEXT              ,
 );
 
 
--- VOITURE
-CREATE TABLE VOITURE (
-    idVoiture SERIAL PRIMARY KEY,
-    nomModele VARCHAR(42) REFERENCES MODELE       (nommodele),
-    nomType   VARCHAR(42) REFERENCES TYPE_VOITURE (nomtype)
-);
-
-
--- MARQUE
+--* MARQUE (nomMarque, paysOrigineMarque)
 CREATE TABLE MARQUE (
-    nomMarque         VARCHAR(42) PRIMARY KEY,
-    paysOrigineMarque VARCHAR(42)
+    nomMarque         TEXT PRIMARY KEY,
+    paysOrigineMarque TEXT NOT NULL
 );
 
 
--- PREPARATEUR
+--* PREPARATEUR (nomPreparateur, paysOriginePrepa)
 CREATE TABLE PREPARATEUR (
-    nomPreparateur   VARCHAR(42) PRIMARY KEY,
-    paysOriginePrepa VARCHAR(42)
+    nomPreparateur   TEXT PRIMARY KEY,
+    paysOriginePrepa TEXT NOT NULL
 );
 
 
--- MOTEUR
+-- MOTEUR (idMoteur, (F) nbCylindre, (F) cylindree, (F) architecture, (F) aspiration, energie, (F) regimeMax, puissanceMax, couple)
 CREATE TABLE MOTEUR (
-    idMoteur   SERIAL PRIMARY KEY,
+    idMoteur     SERIAL PRIMARY KEY           ,
+    nbCylindre   INT    CHECK (nbCylindre > 0),
+    cylindree    REAL   CHECK (cylindree  > 0),
+    architecture TEXT                         ,
+    aspiration   TEXT                         ,
+    energie      TEXT   NOT NULL              ,
+    regimeMax    INT                          ,
+    puissanceMax INT    NOT NULL              ,
+    couple       INT    NOT NULL
+);
+
+
+-- VOITURE (idVoiture, nomModele, nomType, poids, couleur, acceleration, vitesseMax, transmission, (F) boiteDeVitesse, (F) nomPreparateur#, idMoteur#)
+CREATE TABLE VOITURE (
+    idVoiture    SERIAL PRIMARY KEY,
+    nomModele    TEXT NOT NULL,
+    nomType      TEXT NOT NULL,
+    poids        INT  NOT NULL,
+    acceleration REAL NOT NULL, -- accélération 0 à 100km/h
+    vitesseMax   INT  NOT NULL,
+    transmission TEXT NOT NULL,
+    boiteDeVitesse TEXT,
+    nomPreparateur TEXT,
+    idMoteur INT NOT NULL REFERENCES MOTEUR(idMoteur)
+);
+
+
+-- RmarqueVoiture (idVoiture#, nomMarque#)
+CREATE TABLE marqueVoiture (
+    idVoiture INT REFERENCES VOITURE (idvoiture),
+    nomMarque TEXT REFERENCES MARQUE (nommarque)
+);
+
+
+-- RphotoVoiture (idVoiture#, idPhoto#)
+CREATE TABLE photoVoiture (
+    idPhoto   INT REFERENCES PHOTO  (idphoto  ),
+    idVoiture INT REFERENCES VOITURE(idvoiture),
+    PRIMARY KEY (idPhoto, idVoiture)
 );
